@@ -37,10 +37,10 @@ class Product(models.Model):
     image = models.ImageField(upload_to="images/")
     slug = models.CharField(max_length=255, unique=True)
     price = models.DecimalField(max_digits=4, decimal_places=2)
-    in_stock = models.BooleanField()
-    is_active = models.BooleanField()
+    in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
-    update = models.DateTimeField(auto_now=True,)
+    updated = models.DateTimeField(auto_now=True,)
 
     class Meta:
         """Meta definition for Product."""
